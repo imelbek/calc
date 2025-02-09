@@ -1,4 +1,4 @@
-﻿// Simple Calculator with 5 operators -> +, -, *, / and "Power operator"
+﻿// Simple Calculator with 5 operators -> +, -, *, /, % and "Power operator"
 
 Console.Write("Enter first number: ");
 float num1 = float.Parse(Console.ReadLine());
@@ -11,19 +11,25 @@ float sum = num1 + num2;
 float minus = num1 - num2;
 float multipl = num1 * num2;
 float divis = num1 / num2;
+float positPercentage = num1 * num2 / 100;
+float negatPercentage = num1 * (100 - Math.Abs(num2)) / 100;
 
-Console.WriteLine($"The Addition: {num1} + {num2} = {sum}");
-Console.WriteLine($"The Subtraction: {num1} - {num2} = {minus}");
-Console.WriteLine($"The Multiplication: {num1} * {num2} = {multipl}");
+Console.WriteLine($"{num1} + {num2} = {sum}");
+Console.WriteLine($"{num1} - {num2} = {minus}");
+Console.WriteLine($"{num1} * {num2} = {multipl}");
 
 if (num2 != 0)
-    Console.WriteLine($"The Division: {num1} / {num2} = {divis}");
+    Console.WriteLine($"{num1} / {num2} = {divis}");
 else
     Console.WriteLine("Error! You cannot delete to 0");
 
 Console.WriteLine($"The remainer from devision: {num1 % num2}");
 Console.WriteLine($"{num1}^{num2} = {Math.Pow(num1, num2)}");
-Console.WriteLine($"The square root of ({num1}) is {Math.Sqrt(num1)} and the square root of ({num2}) is {Math.Sqrt(num2)}");
+Console.WriteLine($"v({num1}) is {Math.Sqrt(num1)} and " +
+    $"v({num2}) is {Math.Sqrt(num2)}");
+
+if (num2 >= 0) Console.WriteLine($"{num1} * {num2}% = {positPercentage}");
+else Console.WriteLine($"{num1} * {num2}% = {negatPercentage}");
 
 // the note
 /*float Addition = num1 + num2;
