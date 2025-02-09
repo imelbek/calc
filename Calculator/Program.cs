@@ -55,6 +55,21 @@ if (num2 >= 0)
 else 
     Console.WriteLine($"{num1} * {num2}% = {negatPercentage}");
 
+// Factorial
+int newNum = 1;
+int newNum1 = 1;
+
+if (num1 > 0 || num2 > 0)
+{
+    for (int i = 1; i <= num1; i++)
+        newNum = newNum * i;
+    for (int i = 1; i <= num2; i++)
+        newNum1 = newNum1 * i;
+
+    Console.WriteLine($"{num1}! = {newNum} and {num2}! = {newNum1}");
+}
+else Console.WriteLine("Error: the numbers should be more than 0");
+    
 // the note
 /*float Addition = num1 + num2;
 float Subtraction = num1 - num2;
