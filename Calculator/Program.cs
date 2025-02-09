@@ -1,35 +1,59 @@
-﻿// Simple Calculator with 5 operators -> +, -, *, /, % and "Power operator"
+﻿
+// Simple Calculator 
 
 Console.Write("Enter first number: ");
-float num1 = float.Parse(Console.ReadLine());
+double num1 = double.Parse(Console.ReadLine());
 
 Console.Write("Enter second number: ");
 string b = Console.ReadLine();
-float num2 = float.Parse(b);
+double num2 = double.Parse(b);
 
-float sum = num1 + num2;
-float minus = num1 - num2;
-float multipl = num1 * num2;
-float divis = num1 / num2;
-float positPercentage = num1 * num2 / 100;
-float negatPercentage = num1 * (100 - Math.Abs(num2)) / 100;
+// Formulas
+double sum = num1 + num2;
+double minus = num1 - num2;
+double multipl = num1 * num2;
+double divis = num1 / num2;
+double positPercentage = num1 * num2 / 100;
+double negatPercentage = num1 * (100 - Math.Abs(num2)) / 100;
 
+// +
 Console.WriteLine($"{num1} + {num2} = {sum}");
+
+// -
 Console.WriteLine($"{num1} - {num2} = {minus}");
+
+// *
 Console.WriteLine($"{num1} * {num2} = {multipl}");
 
-if (num2 != 0)
-    Console.WriteLine($"{num1} / {num2} = {divis}");
-else
+// : or /
+if (num2 == 0)
     Console.WriteLine("Error! You cannot delete to 0");
+else 
+    Console.WriteLine($"{num1} / {num2} = {divis}");    
 
-Console.WriteLine($"The remainer from devision: {num1 % num2}");
-Console.WriteLine($"{num1}^{num2} = {Math.Pow(num1, num2)}");
-Console.WriteLine($"v({num1}) is {Math.Sqrt(num1)} and " +
-    $"v({num2}) is {Math.Sqrt(num2)}");
+// Remainer
+if (num2 == 0)
+    Console.WriteLine("Error! You cannot delete to 0 and get the remainer from division");
+else
+    Console.WriteLine($"The remainer from devision of {num1} and {num2}: {num1 % num2}");
 
-if (num2 >= 0) Console.WriteLine($"{num1} * {num2}% = {positPercentage}");
-else Console.WriteLine($"{num1} * {num2}% = {negatPercentage}");
+// Power
+if (num1 == 0 && num2 == 0)
+    Console.WriteLine("0^0 doesn't have a value");
+else
+    Console.WriteLine($"{num1}^{num2} = {Math.Pow(num1, num2)}");
+
+// Square root
+if (num1 < 0 || num2 < 0)
+    Console.WriteLine("Cannot have square root from negative number");
+else
+    Console.WriteLine($"v({num1}) is {Math.Sqrt(num1)} and v({num2}) is {Math.Sqrt(num2)}");
+
+// % part
+if (num2 >= 0) 
+    Console.WriteLine($"{num1} * {num2}% = {positPercentage}");
+else 
+    Console.WriteLine($"{num1} * {num2}% = {negatPercentage}");
 
 // the note
 /*float Addition = num1 + num2;
